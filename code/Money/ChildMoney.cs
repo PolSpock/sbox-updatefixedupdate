@@ -18,6 +18,8 @@ namespace Sandbox.Money
 			GameObject.Tags.Add( "money" );
 
 			Transform.LocalRotation = Rotation.FromPitch( 90f );
+			// If the GameObject is created in `OnFixedUpdate()`, Clear Interpolation must be called
+			//Transform.ClearInterpolation();
 
 			ModelRenderer ??= GameObject.Components.GetOrCreate<ModelRenderer>();
 			ModelRenderer.Model = Cloud.Model( "facepunch/cereal_closed" );
@@ -25,12 +27,6 @@ namespace Sandbox.Money
 			BoxCollider ??= GameObject.Components.GetOrCreate<BoxCollider>();
 			BoxCollider.Scale = new Vector3( 100f );
 
-		}
-
-		protected override void OnStart()
-		{
-			base.OnStart();
-			//Transform.LocalRotation = Rotation.FromPitch( 90f );
 		}
 
 		protected override void OnUpdate()
