@@ -21,8 +21,6 @@ public sealed class NetworkTest : Component
 		{
 			var goMoney = new GameObject();
 			goMoney.Components.Create<Money>();
-
-			goMoney.Transform.Position = Transform.Position + Vector3.Up * 64f;
 		}
 
 	}
@@ -36,8 +34,6 @@ public sealed class NetworkTest : Component
 		{
 			var goMoney = new GameObject();
 			goMoney.Components.Create<Money>();
-
-			goMoney.Transform.Position = Transform.Position + Vector3.Up * 64f;
 		}
 
 	}
